@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exercício 3</title>
+  <style>
+    .hover-box {
+      width: 200px;
+      height: 100px;
+      background-color: lightgray;
+      margin-top: 20px;
+    }
+
+    .hover-box:hover {
+      background-color: cornflowerblue;
+    }
+
+    table, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+
+    td {
+      width: 100px;
+      height: 40px;
+      text-align: center;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Exercício 3</h2>
+
+  <p>Contador: <span id="contador">0</span></p>
+
+  <ul>
+    <li onclick="alert('Pizza')">Pizza</li>
+    <li onclick="alert('Lasanha')">Lasanha</li>
+    <li onclick="alert('Churrasco')">Churrasco</li>
+    <li onclick="alert('Feijoada')">Feijoada</li>
+    <li onclick="alert('Sushi')">Sushi</li>
+  </ul>
+
+  <div class="hover-box">Passe o mouse aqui</div>
+
+  <br>
+  <table>
+    <tr>
+      <td onclick="colorirCelula(this)">1</td>
+      <td onclick="colorirCelula(this)">2</td>
+      <td onclick="colorirCelula(this)">3</td>
+    </tr>
+    <tr>
+      <td onclick="colorirCelula(this)">4</td>
+      <td onclick="colorirCelula(this)">5</td>
+      <td onclick="colorirCelula(this)">6</td>
+    </tr>
+    <tr>
+      <td onclick="colorirCelula(this)">7</td>
+      <td onclick="colorirCelula(this)">8</td>
+      <td onclick="colorirCelula(this)">9</td>
+    </tr>
+  </table>
+
+  <script>
+    // Contador
+    let contador = 0;
+    setInterval(() => {
+      contador++;
+      document.getElementById("contador").textContent = contador;
+    }, 1000);
+
+    // Colorir célula
+    function colorirCelula(celula) {
+      celula.style.backgroundColor = "red";
+    }
+  </script>
+</body>
+</html>
